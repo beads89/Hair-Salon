@@ -10,14 +10,15 @@ Make a link to go back to list of all stylists *@
 
 <h2>Edit</h2>
 
-<h4>Edit: @Html.DisplayFor(model => model.StylistName)</h4>
+<h4>@Html.DisplayFor(model => model.StylistName)</h4>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.StylistId)
 
-  @Html.LabelFor(model => model.StylistName)
-  <span>Change Name:</span>@Html.EditorFor(model => model.StylistName)
+  <span>Change Name: </span>@Html.EditorFor(model => model.StylistName)<br />
+
+  <span>Change Specialty: </span>@Html.EditorFor(model => model.StylistSpecialty)
 
   <input type="submit" value="Save" />
 }

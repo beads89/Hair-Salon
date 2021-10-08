@@ -1,6 +1,7 @@
 @* Displays the selected Stylist and Clients under that Stylist.
 Make options to edit or delete the stylist.
 Something to go back to list of all stylists? *@
+
 @{
   Layout = "_Layout";
 }
@@ -11,6 +12,9 @@ Something to go back to list of all stylists? *@
 <hr />
 <h3>Name: @Html.DisplayFor(model => model.StylistName)<h3>
 <h3>Specialty: @Html.DisplayFor(model => model.StylistSpecialty)</h3>
-<p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+
+
+
+<p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
+<p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
+<p>@Html.ActionLink("Back to all Stylists", "Index")</p>

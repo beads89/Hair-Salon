@@ -1,2 +1,19 @@
 @* Page to give final confirmation to delete a Stylist.
 Make a link back to list of all stylists, mercy is shown. *@
+
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist
+
+<h2>Remove this stylist?</h2>
+
+<p>Name: @Html.DisplayFor(model => model.StylistName)</p>
+<p>Specialty: @Html.DisplayFor(model => model.StylistSpecialty)</p>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
+@Html.ActionLink("Cancel and Return to Details", "Index")
