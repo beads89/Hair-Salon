@@ -1,3 +1,19 @@
 @* Page to add a new Stylist
 Include name and specialty
 Make link to go back to all Stylists *@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist
+
+<h4>Add a new stylist!</h4>
+
+@using (Html.BeginForm())
+{
+  <span>Enter Stylist's Name:</span>@Html.TextBoxFor(model => model.StylistName)<br/>
+  <span>Enter Stylist's Specialty:</span>@Html.TextBoxFor(model => model.StylistSpecialty) <br />
+  <input type="submit" value="Add a new Stylist" />
+}
+
+<p>@Html.ActionLink("Show all Stylists!", "Index")</p>
