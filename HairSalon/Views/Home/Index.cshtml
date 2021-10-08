@@ -1,4 +1,11 @@
 @* Homepage!
 Has a welcome message with two links to go to either Clients or Stylists. *@
 
-<h1>test</h1>
+<h1>Eau Claire's Salon</h1>
+
+<h3>To onboard, edit or delete a stylist, click the link below.</h3>
+<p>@Html.ActionLink("View all Stylists", "Index", "Stylist")</p>
+<h3>To view, add, edit or delete a client, click the link below.</h3>
+<p>@Html.ActionLink("View all Clients", "Index", "Client")</p>
+<p>Note: a stylist must be added before a client can be added.</p>
+
