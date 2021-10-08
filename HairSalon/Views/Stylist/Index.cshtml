@@ -20,9 +20,10 @@ else
 <ol>
   @foreach(Stylist stylist in Model)
   {
-    <li>@Html.ActionLink($"{stylist.StylistName}", "Details", new { id = stylist.StylistId })</li>
+    <li>@Html.ActionLink($"{stylist.StylistName}", "Details", new { id = stylist.StylistId }) | Specialty: @stylist.StylistSpecialty</li>
+    <li>Current Clients:</li>
     <ul>
-      <li>Specialty: @stylist.StylistSpecialty</li>
+      <li>@stylist.Clients</li>
     </ul>
   }
 </ol>
