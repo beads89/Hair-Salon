@@ -2,3 +2,23 @@
 Use html.hiddenfor stylist id.
 Make boxes to edit name and specialty(?)
 Make a link to go back to list of all stylists *@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist
+
+<h2>Edit</h2>
+
+<h4>Edit: @Html.DisplayFor(model => model.StylistName)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.StylistId)
+
+  @Html.LabelFor(model => model.StylistName)
+  <span>Change Name:</span>@Html.EditorFor(model => model.StylistName)
+
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>
