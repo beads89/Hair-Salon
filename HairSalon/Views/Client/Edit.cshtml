@@ -2,3 +2,31 @@
 Use html.hiddenfor client id.
 Make boxes to edit name and description
 Make a link to go back to list of all clients *@
+
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client
+
+<h2>Edit</h2>
+
+<h4>Edit this Client: @Html.DisplayFor(model => model.ClientName)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.ClientId)
+
+  <span>Name: </span>
+  @Html.EditorFor(model => model.ClientName)<br />
+
+  <span>Notes: </span>
+  @Html.EditorFor(model => model.ClientDescription)<br />
+
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")<br />
+
+  <input type="submit" value="Save" class="btn btn-default"/>
+}
+
+<p>@Html.ActionLink("Back to all clients", "Index")</p>
