@@ -6,19 +6,27 @@
 
 <h4>Add a new Client:</h4>
 
-@using (Html.BeginForm())
+@if (Enumerable.Count(ViewBag.StylistId) == 0)
 {
-
-  <span>Name: </span>
-  @Html.TextBoxFor(model => model.ClientName, new {placeholder = "Enter Name", required="required"})<br />
-
-  <span>Notes: </span>
-  @Html.TextBoxFor(model => model.ClientDescription, new {placeholder = "Enter Description", required="required"})<br />
-
-  <span>Stylist: </span>
-  @Html.DropDownList("StylistId")<br />
-
-  <input type="submit" value="Add new client" class="btn btn-default" />
+  <p>A stylist must be in the system before a client can be added.</p>
+  <p>@Html.ActionLink("Click here", "Create", "Stylist") to add a stylist.</p>
 }
+else
+{
+  @using (Html.BeginForm())
+  {
+
+    <span>Name: </span>
+    @Html.TextBoxFor(model => model.ClientName, new {placeholder = "Enter Name", required="required"})<br />
+
+    <span>Notes: </span>
+    @Html.TextBoxFor(model => model.ClientDescription, new {placeholder = "Enter Description", required="required"})<br />
+
+    <span>Stylist: </span>
+    @Html.DropDownList("StylistId")<br />
+
+    <input type="submit" value="Add new client" class="btn btn-default" />
+  }
 <p>@Html.ActionLink("Show all Clients", "Index")</p>
+}
 <p>@Html.ActionLink("Return Home", "Index", "Home")</p>
